@@ -32,8 +32,14 @@ router.post('/' , async (req, res) => {
         level: req.body.level,
         telegram: req.body.telegram
     })
-    const save = await faceSave.save
+    const save = await faceSave.save()
     res.send(save)
+})
+
+router.get('/' , async (req,res) => {
+    const getData = await Face.find()
+    .select({_id: 0 , __v: 0})
+    res.send(getData)
 })
 
 module.exports = router

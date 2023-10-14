@@ -10,7 +10,7 @@ const NewsSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    information: {
+    desc: {
         type: String,
         required: true,
     }

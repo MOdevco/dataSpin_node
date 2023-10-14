@@ -25,6 +25,7 @@ router.post('/' , async (req, res) => {
     res.send(saveProject)
 })
 
+
 router.get('/', async (req, res) => {
     const getData = await Project.find()
     .select({_id: 0 , __v: 0})

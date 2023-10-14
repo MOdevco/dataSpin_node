@@ -31,12 +31,10 @@ const faceSchema = new mongoose.Schema({
         maxLength: 15,
         trim: true
     },
-    direction: [
-        {
-            type: String,
-            required: true
-        }
-    ],
+    direction: {
+        type: String,
+        required: true
+    },
     level: {
         type: String,
         required: true,

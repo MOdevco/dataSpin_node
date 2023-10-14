@@ -21,10 +21,16 @@ router.post('/', async(req, res) => {
     let newsSave = new News({
         photo: req.body.photo,
         name: req.body.name,
-        information: req.body.information
+        desc: req.body.information
     })
      const save = await newsSave.save()
      res.send(save)
+})
+
+router.get('/' , async (req, res) => {
+    const getData = await News.find()
+    .select({_id: 0 , __v: 0})
+    res.send(getData)
 })
 
 module.exports = router
