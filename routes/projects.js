@@ -4,12 +4,8 @@ const router = express.Router()
 
 router.post('/' , async (req, res) => {
     let projest = await Project.findOne({name: req.body.name})
-    if(req.body.desc.length < 10) {
-        res.status(400).send("Malumot juda kalta")
-    }
-    if(req.body.name.length < 5) {
-        res.status(400).send("Malumot juda kalta")
-    }
+ 
+    
     if(projest) 
         return res.status(400).send("Bunday nom mavjud")
 
@@ -32,5 +28,13 @@ router.get('/', async (req, res) => {
     res.send(getData)
 })
 
+router.get('/:id' , async (req,res) => {
+    Project.findById(req.params.id)
+    .then((response) => {
+        res.status(200).json({
+            project:response
+        })
+    })
+})
 
 module.exports = router
