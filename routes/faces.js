@@ -1,6 +1,6 @@
 const {Face} = require('../modules/face')
 const express = require('express')
-const router = express.Router()
+const router = express.Router() 
 
 
 router.post('/' , async (req, res) => {
