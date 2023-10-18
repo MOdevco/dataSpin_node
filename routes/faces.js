@@ -38,8 +38,18 @@ router.post('/' , async (req, res) => {
 
 router.get('/' , async (req,res) => {
     const getData = await Face.find()
-    .select({_id: 0 , __v: 0})
+    .select({ __v: 0})
     res.send(getData)
+})
+
+
+router.get('/:id' , async (req,res) => {
+    Face.findById(req.params.id)
+    .then((response) => {
+        res.status(200).json({
+            project:response
+        })
+    })
 })
 
 module.exports = router

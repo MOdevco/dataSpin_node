@@ -21,8 +21,6 @@ const faceSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true,
-        minLength: 10,
-        maxLength: 50
     },
     phoneNumber: {
         type: Number,

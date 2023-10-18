@@ -8,6 +8,7 @@ const getRouter = require('./routes/projects')
 const getNews = require('./routes/news')
 const getFace = require('./routes/faces')
 const getIdProject = require('./routes/projects')
+const getIdFace = require('./routes/faces')
 const cors = require('cors')
 const swaggerUI = require('swagger-ui-express')
 const swaggerJSDOC = require('swagger-jsdoc')
@@ -71,6 +72,7 @@ app.use('/api/get-project' , getRouter)
 app.use("/api/get-news" , getNews)
 app.use('/api/get-face' , getFace)
 app.use('/api/getId-project' , getIdProject)
+app.use('/api/getId-face' , getFace)
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
