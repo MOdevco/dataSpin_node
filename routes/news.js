@@ -31,6 +31,7 @@ router.get('/' , async (req, res) => {
     const getData = await News.find()
     .select({_id: 0 , __v: 0})
     res.send(getData)
+
 })
 
 module.exports = router
